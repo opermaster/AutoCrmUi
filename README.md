@@ -1,0 +1,1 @@
+# Web UI for [AutoCrm Backend](https://github.com/opermaster/AutoCrmApi).

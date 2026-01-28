@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Crm - Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id= "pop-up">
+        <span id="pop-up-text"></span>
+    </div>
+    <div class="page">
+        
+    <h2>Add Client</h2>
+    <form id="clientForm" class="card form">
+        <label>
+            First Name
+            <input type="text" name = "firstName" id="firstName" required autocomplete="off">
+        </label>
+
+        <label>
+            Last Name
+            <input type="text" name = "lastName" id="lastName" required autocomplete="off">
+        </label>
+
+        <label>
+            Phone number
+            <input type="text" name = "phone" id="phone" required autocomplete="off">
+        </label>
+
+        <button type="submit">Add</button>
+    </form>
+
+    <h2>Add Auto</h2>
+    <form id="autoForm" class="card form">
+        <label>
+            Client Phone
+            <input name="phone" type="text" id="phone_number" required autocomplete="off">
+        </label>
+        <label>
+            Brand
+            <input name="brand" type="text" id="brand" required autocomplete="off">
+        </label>
+        <label>
+            Model
+            <input name="model" type="text" id="model" required autocomplete="off">
+        </label>
+        <label>
+            Year
+            <input name="year" type="number" id="year" required autocomplete="off">
+        </label>
+        <label >
+            VIN
+            <input name="vin" type="text" id="vin" required autocomplete="off">
+        </label>
+        <label>
+            Number
+            <input name="number" type="text" id="number" required autocomplete="off">
+        </label>
+
+        <button type="submit">Add</button>
+    </form>
+    <h2>Создание заказа</h2>
+
+    <form id="orderForm" class="card form">
+
+        <label>
+            Number
+            <input type="text" name="autoNumber" id="auto_number" placeholder="AA1234BB" autocomplete="off">
+        </label>
+
+        <div id="selected-auto"></div>
+
+        <input type="hidden" name="AutoId" id="autoId">
+
+        <label>
+            Commentary
+            <textarea name="Comment"></textarea>
+        </label>
+
+        <h3>Services</h3>
+        <div id="services-list"></div>
+
+
+        <h3>Parts</h3>
+        <div id="parts-list"></div>
+
+
+        <button type="submit">Create Order</button>
+    </form>
+</div>
+</body>
+</html>
+<script src="script.js"></script>
