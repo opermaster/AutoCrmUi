@@ -15,7 +15,7 @@ function showPopup(text, type = "neg", timeout = 3000) {
 }
 async function load_orders(){
     // api/orders GET
-    const url = localhost+"orders";
+    const url = localhost+"orders/inner";
 	try{
         const response = await fetch(url,{
             method:"GET",
@@ -145,7 +145,7 @@ async function editOrder(orderId){
         comment,
         servicesDone
     });
-	let url = localhost+"orders"
+	let url = localhost+"orders/services-update"
 	try{
         const response = await fetch(url,{
             method:"PUT",

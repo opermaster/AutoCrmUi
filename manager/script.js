@@ -79,7 +79,7 @@ async function createAuto(e){
         VIN: formData.get("vin"),
         Number: formData.get("number")
     };
-    const url = localhost+"auto";
+    const url = localhost+"auto/new_auto";
 
 	try{
         const response = await fetch(url,{
@@ -125,7 +125,7 @@ async function createOrder(e){
         Comment: formData.get("Comment")
     };
 
-    let url = localhost+"orders";
+    let url = localhost+"orders/new_order";
     let newOrderId = -1;
 	try{
         const response = await fetch(url,{
@@ -289,7 +289,7 @@ function generateId() {
 
 async function getServices() {
     // api/parts GET
-    const url = localhost+"service";
+    const url = localhost+"service/all/services";
 	try{
         const response = await fetch(url,{
             method:"GET",
@@ -360,7 +360,7 @@ async function loadServices() {
 
 async function getParts() {
     // api/parts GET
-    const url = localhost+"part";
+    const url = localhost+"part/all_parts";
 	try{
         const response = await fetch(url,{
             method:"GET",

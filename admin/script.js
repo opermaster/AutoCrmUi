@@ -65,7 +65,7 @@ async function load_users(){
 }
 async function load_services(){
     // api/services/ GET
-    const url = localhost+"service";
+    const url = localhost+"service/all/services";
 	try{
         const response = await fetch(url,{
             method:"GET",
@@ -90,7 +90,7 @@ async function load_services(){
 }
 async function load_parts(){
     // api/part/ GET
-	const url = localhost+"part";
+	const url = localhost+"part/all_parts";
 	try{
         const response = await fetch(url,{
             method:"GET",
@@ -424,7 +424,7 @@ async function addService(e) {
 	// api/services/ POST
 	e.preventDefault();
 	const formData = new FormData(e.target);
-    const url = localhost+"service";
+    const url = localhost+"service/new-service";
 
 	try{
         const response = await fetch(url,{
@@ -462,7 +462,7 @@ async function saveService(id) {
     let new_price = document.getElementById(`service-price-${id}`).value;
     let new_time = document.getElementById(`service-time-${id}`).value;
     let new_name = document.getElementById(`service-name-${id}`).value;
-    const url = localhost+"service";
+    const url = localhost+"service/update-service";
 
 	try{
         const response = await fetch(url,{
@@ -494,7 +494,7 @@ async function saveService(id) {
 }
 async function deleteService(id) {
 	// api/service/{id} DELETE
-    const url = localhost+`service/${id}`;
+    const url = localhost+`service/delete-service/${id}`;
 
 	try{
         const response = await fetch(url,{
@@ -519,7 +519,7 @@ async function addPart(e) {
 	// api/part/ POST
 	e.preventDefault(); 
 	const formData = new FormData(e.target);
-    const url = localhost+"part";
+    const url = localhost+"part/new-part";
 
 	try{
         const response = await fetch(url,{
@@ -551,7 +551,7 @@ async function savePart(id) {
 	// api/part/ PUT
     let new_price = document.getElementById(`part-price-${id}`).value;
     let new_name = document.getElementById(`part-name-${id}`).value;
-    const url = localhost+"part";
+    const url = localhost+"part/update-part";
 
 	try{
         const response = await fetch(url,{
@@ -581,7 +581,7 @@ async function savePart(id) {
 }
 async function deletePart(id) {
 	// api/part/ DELETE
-    const url = localhost+`part/${id}`;
+    const url = localhost+`part/by-partid/${id}`;
 
 	try{
         const response = await fetch(url,{
@@ -604,7 +604,7 @@ async function deletePart(id) {
 }
 async function deleteOrder(id){
     // api/part/ DELETE
-    const url = localhost+`orders/${id}`;
+    const url = localhost+`orders/by-id/${id}`;
 
 	try{
         const response = await fetch(url,{
